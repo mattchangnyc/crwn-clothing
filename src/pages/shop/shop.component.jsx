@@ -9,7 +9,8 @@ import CollectionsOverviewContainer from '../../components/collections-overview/
 import CollectionPageContainer from '../collection/collection.component';
 
 //import { updateCollections } from '../../redux/shop/shop.actions';
-import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
+//import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
+import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 //import { selectIsCollectionFetching, selectIsCollectionsLoaded } from '../../redux/shop/shop.selectors';
 import WithSpinner from '../../components/with-spinner/with-spinner.component';
 
@@ -40,8 +41,11 @@ class ShopPage extends React.Component{
         //     this.setState({ loading: false });
         // });
 
-        const { fetchCollectionsStartAsync } = this.props;
-        fetchCollectionsStartAsync();
+        // const { fetchCollectionsStartAsync } = this.props;
+        // fetchCollectionsStartAsync();
+
+        const { fetchCollectionsStart } = this.props;
+        fetchCollectionsStart();
     }
 
     render() {
@@ -78,7 +82,8 @@ class ShopPage extends React.Component{
 
 const mapDispatchToProps = dispatch => ({
     // updateCollections: collectionsMap => dispatch(updateCollections(collectionsMap))
-    fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync())
+    // fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync())
+    fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
 });
 
 //export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
