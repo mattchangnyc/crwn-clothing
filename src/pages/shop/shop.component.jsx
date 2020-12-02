@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { createStructuredSelector } from 'reselect';
+// import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 
 //import CollectionsOverview from '../../components/collections-overview/collections-overview.component';
@@ -12,7 +12,7 @@ import CollectionPageContainer from '../collection/collection.component';
 //import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 //import { selectIsCollectionFetching, selectIsCollectionsLoaded } from '../../redux/shop/shop.selectors';
-import WithSpinner from '../../components/with-spinner/with-spinner.component';
+// import WithSpinner from '../../components/with-spinner/with-spinner.component';
 
 // const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 // const CollectionPageWithSpinner = WithSpinner(CollectionPage);
