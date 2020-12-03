@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 // import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -17,7 +17,12 @@ import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 // const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 // const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
-class ShopPage extends React.Component{
+const ShopPage = ({ fetchCollectionsStart, match }) => {
+
+     useEffect(() => {
+         fetchCollectionsStart();
+     }, [fetchCollectionsStart]);
+
     // constructor() {
     //     super();
 
@@ -32,25 +37,25 @@ class ShopPage extends React.Component{
 
     
 
-    componentDidMount() {
+    // componentDidMount() {
 
 
-        // this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
-        //     const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-        //     updateCollections(collectionsMap);
-        //     this.setState({ loading: false });
-        // });
+    //     // this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+    //     //     const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+    //     //     updateCollections(collectionsMap);
+    //     //     this.setState({ loading: false });
+    //     // });
 
-        // const { fetchCollectionsStartAsync } = this.props;
-        // fetchCollectionsStartAsync();
+    //     // const { fetchCollectionsStartAsync } = this.props;
+    //     // fetchCollectionsStartAsync();
 
-        const { fetchCollectionsStart } = this.props;
-        fetchCollectionsStart();
-    }
+    //     const { fetchCollectionsStart } = this.props;
+    //     fetchCollectionsStart();
+    // }
 
-    render() {
+    // render() {
         //const { match, isCollectionsLoaded } = this.props;
-        const { match } = this.props
+        // const { match } = this.props
 
         return (
             <div className='shop-page'>
@@ -72,7 +77,7 @@ class ShopPage extends React.Component{
                 />*/}
             </div>
         )
-    }
+    // }
 } 
 
 
